@@ -23,6 +23,8 @@ while True:
         Baraja = Corazones + Trebol + Picas + Rombos
     if c == "SALIR":
         break
+    if c == "SUP":
+        print(Baraja)
     else:
         i = 0
     Ases, Reyes, Sota, Caballo, Diez, Nueve, Ocho, Siete, Seis, Cinco, Cuatro, Tres, Dos, Resto = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
@@ -65,7 +67,7 @@ while True:
             Dos += 1
             Resto += 1
         i += 1        
-    
+    ''''
     num_10 = Baraja.count("10C") + Baraja.count("10T") + Baraja.count("10P") + Baraja.count("10R")
     num_9 = Baraja.count("9C") + Baraja.count("9T") + Baraja.count("9P") + Baraja.count("9R")
     num_8 = Baraja.count("8C") + Baraja.count("8T") + Baraja.count("8P") + Baraja.count("8R")
@@ -79,6 +81,36 @@ while True:
     num_Q = Baraja.count("QC") + Baraja.count("QT") + Baraja.count("QP") + Baraja.count("QR")
     num_K = Baraja.count("KC") + Baraja.count("KT") + Baraja.count("KP") + Baraja.count("KR")
     num_J = Baraja.count("JC") + Baraja.count("JT") + Baraja.count("JP") + Baraja.count("JR")
+    '''
+    num_A, num_K, num_Q, num_J, num_10, num_9, num_8, num_7, num_6, num_5, num_4, num_3, num_2 = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    for i in Baraja:
+        if i[0] == "A":
+            num_A += 1
+        elif i[0] == "K":
+            num_K += 1
+        elif i[0] == "Q":
+            num_Q += 1
+        elif i[0] == "J":
+            num_J += 1
+        elif i[0] == "1" and i[1] == "0":
+            num_10 += 1
+        elif i[0] == "9":
+            num_9 += 1
+        elif i[0] == "8":
+            num_8 += 1
+        elif i[0] == "7":
+            num_7 += 1
+        elif i[0] == "6":
+            num_6 += 1
+        elif i[0] == "5":
+            num_5 += 1
+        elif i[0] == "4":
+            num_4 += 1
+        elif i[0] == "3":
+            num_3 += 1
+        elif i[0] == "2":
+            num_2 += 1
+                
     print("------------------------------------------------------")
     print("A: ", num_A, "(",round((Ases/intentos*100), 1), "%)")
     print("K: ", num_K,"(",round((Reyes/intentos*100), 1), "%)")
