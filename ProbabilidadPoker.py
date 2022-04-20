@@ -1,7 +1,7 @@
-from difflib import restore
-from gzip import READ
-from itertools import count
-from multiprocessing.sharedctypes import RawArray
+#from difflib import restore
+#from gzip import READ
+#from itertools import count
+#from multiprocessing.sharedctypes import RawArray
 import random as rad
 
 Oros = ["A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"]
@@ -29,20 +29,7 @@ while True:
         break
     else:
         i = 0
-    Ases = 0
-    Reyes = 0
-    Sota = 0
-    Caballo = 0
-    Diez = 0
-    Nueve = 0
-    Ocho = 0
-    Siete = 0
-    Seis = 0
-    Cinco = 0
-    Cuatro = 0
-    Tres = 0
-    Dos = 0
-    Resto = 0
+    Ases, Reyes, Sota, Caballo, Diez, Nueve, Ocho, Siete, Seis, Cinco, Cuatro, Tres, Dos, Resto = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     while i < intentos:
         a = Baraja[rad.randint(0, len(Baraja) - 1)]
         if a == "A":
@@ -97,4 +84,5 @@ while True:
     print("4: ", Baraja.count("4"),"(",round((Cuatro/intentos*100),1), "%)")
     print("3: ", Baraja.count("3"),"(",round((Tres/intentos*100),1), "%)")
     print("2: ", Baraja.count("2"),"(",round((Dos/intentos*100),1), "%)")
+    print("Cartas bajas: ", (len(Baraja) - Baraja.count("A") -Baraja.count("K") - Baraja.count("Q") - Baraja.count("J")),"(",round((Resto/intentos*100),1), "%)")
     print("------------------------------------------------------")
